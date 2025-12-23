@@ -33,9 +33,9 @@ const Games = ({
       link: "/Games/SpaceInvaders"
     },
     {
-      name: "Chess",
-      img: "/chess.avif",
-      link: "/Games/Chess"
+      name: "Coin Flip",
+      img: "/coinflip.jpg",
+      link: "/Games/CoinFlip"
     },
     {
       name: "Tower Defence",
@@ -43,20 +43,9 @@ const Games = ({
       link: "/Games/TowerDefence"
     },
     {
-      name: "Car Race",
-      img: "/car.jpg",
-      link: "/Games/Carrace",
-      desc : "Ready to race against the best in this high-speed car game!"
-    },
-    {
       name: "FourInLine Game",
       img: "/fourinline.png",
       link: "/Games/FourInLine"
-    },
-    {
-      name: "Coin Flip",
-      img: "/coinflip.jpg",
-      link: "/Games/CoinFlip"
     },
   ];
 
@@ -156,13 +145,20 @@ const Games = ({
                 <div className="flex justify-center flex-row mt-5">
                   <div className=" ">
                     <button
-                      className="py-3 text-black font-abc bg-white border-0  px-6 m-2 focus:outline-none rounded text-4xl"
+                      className="py-3 text-black font-abc bg-white border-0  px-6 m-2 focus:outline-none rounded text-2xl"
                       onClick={() => initgame()}
                     >
                       Play Now
                     </button>
                   </div>
-                  
+                  <div className=" ">
+                    <button
+                      className="py-3 text-black font-abc bg-white border-0  px-6 m-2 focus:outline-none rounded text-2xl"
+                      onClick={() => mintCade()}
+                    >
+                      Claim XP and Cade
+                    </button>
+                  </div>
 
                 </div>
               </>

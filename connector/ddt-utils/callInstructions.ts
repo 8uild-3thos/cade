@@ -24,6 +24,7 @@ export const createMap = (program, name, board, budget, user,) => {
 };
 
 export const createGame = (program, map , user,) => {
+  console.log({ map, user })
   const game =  anchor.web3.Keypair.generate();
   const [mapPDA] = web3.PublicKey.findProgramAddressSync(
     [Buffer.from(map)],
@@ -45,7 +46,6 @@ export const createGame = (program, map , user,) => {
       } catch (error) { console.log(error) }
     })();
   }
-  return game.publicKey;
 };
 
 export const deployUnits = (program, deploys, game, user, map,) => {

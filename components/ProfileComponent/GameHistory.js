@@ -4,7 +4,7 @@ import { AiOutlineCaretDown } from "react-icons/ai";
 const GameHistory = () => {
   const Data = [
     {
-      name: "FourInLine",
+      name: "Car Race",
       date: "15",
       status: "Win",
       color: "green-400",
@@ -20,7 +20,7 @@ const GameHistory = () => {
       points: "-30",
     },
     {
-      name: "TowerDefence",
+      name: "Dice Game",
       date: "22",
       status: "Win",
       color: "green-400",
@@ -28,7 +28,7 @@ const GameHistory = () => {
       points: "+10",
     },
     {
-      name: "FourInLine",
+      name: "Car Race",
       date: "11",
       status: "Win",
       color: "green-400",
@@ -36,7 +36,7 @@ const GameHistory = () => {
       points: "+22",
     },
     {
-      name: "FourInLine",
+      name: "Car Race",
       date: "28",
       status: "Loss",
       color: "red-400",
