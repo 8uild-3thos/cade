@@ -33,9 +33,20 @@ const Games = ({
       link: "/Games/SpaceInvaders"
     },
     {
-      name: "Coin Flip",
-      img: "/coinflip.jpg",
-      link: "/Games/CoinFlip"
+      name: "Chess",
+      img: "/chess.avif",
+      link: "/Games/Chess"
+    },
+    {
+      name: "FourInLine Game",
+      img: "/fourinline.png",
+      link: "/Games/FourInLine"
+    },
+    {
+      name: "Car Race",
+      img: "/car.jpg",
+      link: "/Games/Carrace",
+      desc : "Ready to race against the best in this high-speed car game!"
     },
     {
       name: "Tower Defence",
@@ -43,9 +54,9 @@ const Games = ({
       link: "/Games/TowerDefence"
     },
     {
-      name: "FourInLine Game",
-      img: "/fourinline.png",
-      link: "/Games/FourInLine"
+      name: "Coin Flip",
+      img: "/coinflip.jpg",
+      link: "/Games/CoinFlip"
     },
   ];
 
@@ -75,14 +86,14 @@ const Games = ({
   };
 
   const initgame = () => {
-    // createTransaction(
-    //     publicKey,
-    //     new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
-    //     5
-    // )
+    createTransaction(
+        publicKey,
+        new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
+        5
+    )
     setTimeout(() => {
       setshow(!show);
-    }, 0);
+    }, 7000);
   };
 
   return (
@@ -145,20 +156,13 @@ const Games = ({
                 <div className="flex justify-center flex-row mt-5">
                   <div className=" ">
                     <button
-                      className="py-3 text-black font-abc bg-white border-0  px-6 m-2 focus:outline-none rounded text-2xl"
+                      className="py-3 text-black font-abc bg-white border-0  px-6 m-2 focus:outline-none rounded text-4xl"
                       onClick={() => initgame()}
                     >
                       Play Now
                     </button>
                   </div>
-                  <div className=" ">
-                    <button
-                      className="py-3 text-black font-abc bg-white border-0  px-6 m-2 focus:outline-none rounded text-2xl"
-                      onClick={() => mintCade()}
-                    >
-                      Claim XP and Cade
-                    </button>
-                  </div>
+                  
 
                 </div>
               </>

@@ -9,7 +9,7 @@ import {
   PublicKey,
 } from "@solana/web3.js";
 import * as bs58 from "bs58";
-import secwallet from "../../wallet/secwallet";
+import sw from "../../components/micro/utils/sw";
 import { useUSDCPay } from "../../hooks/transfer";
 import { getOrCreateAssociatedTokenAccount, transfer } from "@solana/spl-token";
 import { useWallet } from "@solana/wallet-adapter-react";
@@ -23,7 +23,7 @@ const RedeemBlindChest = ({ name, img }) => {
     (async () => {
       try {
         setLoading(true);
-        const keypair = Keypair.fromSecretKey(bs58.decode(secwallet));
+        const keypair = Keypair.fromSecretKey(bs58.decode(sw));
         const connection = new Connection(
           "https://api.devnet.solana.com",
           "finalized"
@@ -127,7 +127,7 @@ const RedeemBlindChest = ({ name, img }) => {
                   ) : (
                     <>
                       <button
-                        onClick={() => finalNewTranactionh()}
+                        // onClick={() => finalNewTranactionh()}
                         className="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl"
                       >
                         Get it Now
