@@ -1,35 +1,34 @@
-<p  align="center">
-  <img  src="https://firebasestorage.googleapis.com/v0/b/shrine-76128.appspot.com/o/hehe.png?alt=media&token=ce686f0e-457b-41ae-b05d-26da23310f7d" height={100}>
-</p>  
-<br>
-<img src="https://i.imgur.com/N6oQbzv.png">
-<div align="center">
-  <img src="https://badgen.net/badge/version/1.0/purple">
-  <img src="https://badgen.net/badge/docs/1.0/purple">
-  <img src="https://badgen.net/badge/contributions/open/purple">
-</div>
-<h1 align="center">'Cade</h1>
-<div align="center">
-  <h3>Reimagining Web3 Gaming.</h3>
-  <div align="center">
-    <a href="#">Website</a>
-    •
-    <a href="https://twitter.com/gg_cade">Twitter</a>
-    •
-    <a href="#">Blog</a>
-  </div>
-</div>
-<br>
- 
-# Whats Cade
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-Social gaming platform on @Solana providing a FUN GamEx, prizes, leaderboards, pfps, and a Developer SDK to plug into the platform.
+## Getting Started
 
-# Overview
+First, run the development server:
 
-'Cade is a decentralized arcade platform, where blockchain-based games can function with a structured marketplace, rewards and social layer. In addition to providing our own games, we aim to provide a place for developers to self-publish their games and plug into our system, thereby providing distribution, incentives, and social with little effort on their end, allowing them to focus on creating awesome games for players to enjoy. The project is from the Q2 Artisan Cohort from WBA.
-<br>
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-# Cade Programs
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Github - https://github.com/Web3-Builders-Alliance/cade-programs
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
