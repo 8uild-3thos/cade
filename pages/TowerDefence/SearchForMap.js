@@ -1,59 +1,45 @@
-import { useEffect, useState } from "react";
-import { useAnchorWallet, useConnection } from "@solana/wallet-adapter-react";
-import Head from "next/head";
-import { useProgram } from "../../connector/ddt-utils/useProgram";
-import BoardTubnail from "../../components/TowerDefence/BoardTubnail";
+import * as anchor from "@coral-xyz/anchor";
+import { useEffect, useMemo, useState } from "react";
+import { TOWER_DEFENCE_PROGRAM_ID } from "../../constant/index";
+import { IDL } from "../../constant/towerdefence";
 
-const SearchForMap = (props) => {
-  const [name, setname] = useState("");
-  const [maps, setmaps] = useState([]);
-  const wallet = useAnchorWallet();
+import {
+  PublicKey,
+  SYSVAR_RENT_PUBKEY,
+  SystemProgram,
+  Transaction,
+} from "@solana/web3.js";
+import { utf8 } from "@coral-xyz/anchor/dist/cjs/utils/bytes";
+import {
+  useAnchorWallet,
+  useConnection,
+  useWallet,
+} from "@solana/wallet-adapter-react";
+
+export function useFourInLine() {
   const { connection } = useConnection();
-  const { program } = useProgram({ connection, wallet });
+  const { publicKey } = useWallet();
+  const anchorWallet = useAnchorWallet();
 
-  useEffect(() => {
-    if (program && maps.length == 0) {
-      (async () => {
-        const maps = await program.account.map.all();
-        setmaps(maps);
-      })();
+  const program = useMemo(() => {
+    if (anchorWallet) {
+      const provider = new anchor.AnchorProvider(
+        connection,
+        anchorWallet,
+        anchor.AnchorProvider.defaultOptions()
+      );
+      return new anchor.Program(IDL, FOUR_IN_LINE_PROGRAM_ID, provider);
     }
-  }, [program]);
-
-  const namehandler = (e) => {
-    setname(e.target.value);
+  }, [connection, anchorWallet]);
+  return {
+    program,
   };
+}
 
+const CreateGame = () => {
   return (
-    <>
-      <Head>
-        <title>dtt</title>
-        <meta name="description" content="dtt" />
-      </Head>
-      <main>
-        <div className="flex flex-col items-center justify-center m-5">
-          <input
-            type="text"
-            onChange={namehandler}
-            placeholder="Search for a MAP"
-            value={name}
-            className="mb-5 px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-80 sm:text-base border-gray-300 rounded-md focus:outline-none text-gray-600"
-          />
-        </div>
-        <div className="grid grid-cols-4 gap-2">
-          {maps
-            .filter((map) => map?.account?.name?.includes(name))
-            ?.map((map) => (
-              <div
-                key={map.publicKey}
-                className="p-1 m-5 rounded-md bg-gray-100 flex items-center justify-center"
-              >
-                <BoardTubnail map={map} />
-              </div>
-            ))}
-        </div>
-      </main>
-    </>
-  );
-};
-export default SearchForMap;
+    <></>
+  )
+}
+
+export default CreateGame
